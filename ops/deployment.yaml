@@ -6,7 +6,7 @@ metadata:
     app: flask-server
     tier: flask-server
 spec:
-  revisionHistoryLimit: 2
+  revisionHistoryLimit: 1
   replicas: 2
   template:
     metadata:
@@ -24,6 +24,9 @@ spec:
             limits:
               cpu: 100m
               memory: 150Mi
+          envFrom:
+          - configMapRef:
+              name: postgres-config
           ports:
             - containerPort: 5000
               name: http-flask-server
