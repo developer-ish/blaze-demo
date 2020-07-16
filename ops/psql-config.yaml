@@ -8,3 +8,4 @@ data:
   POSTGRES_DB: groundspeed_devops
   POSTGRES_USER: postgres
   POSTGRES_PASSWORD: postgres
+  DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/groundspeed_devops"
