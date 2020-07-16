@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: flask-server
-          image: image-name
+          image: josephmuli/flask-it:run
           resources:
             requests:
               cpu: 50m
