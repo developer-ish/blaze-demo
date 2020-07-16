@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: flask-server
+  labels:
+    app: flask-server
+    tier: flask-server
+spec:
+  revisionHistoryLimit: 2
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: flask-server
+        tier: flask-server
+    spec:
+      containers:
+        - name: flask-server
+          image: image-name
+          resources:
+            requests:
+              cpu: 50m
+              memory: 100Mi
+            limits:
+              cpu: 100m
+              memory: 150Mi
+          ports:
+            - containerPort: 5000
+              name: http-flask-server
+              protocol: TCP
